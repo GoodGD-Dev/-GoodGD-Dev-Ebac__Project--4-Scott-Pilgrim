@@ -1,0 +1,34 @@
+@use 'var';
+
+.about {
+    background-color: var.$colorprimary;
+    padding: 6rem 0;
+
+    h1 {
+        margin-bottom: 10px;
+    }
+
+    &__content-primary {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 6rem;
+        
+        img {
+            max-width: 45%;
+            border: 2px solid var.$colortertiary;
+            border-radius: 10px;
+        }  
+
+        &__text {
+            max-width: 45%;
+            word-wrap: break-word;
+        }
+    }
+    &__content-secondary {
+        &__text {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 45px;
+        }
+    }
+}

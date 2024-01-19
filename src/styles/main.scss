@@ -1,5 +1,7 @@
 @use 'var';
 @use 'header';
+@use 'hero';
+@use 'about';
 
 @font-face {
     font-family: Scott;
@@ -15,19 +17,26 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
 }
 
+.container {
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+}
 
 @mixin text($fontSize: 16px) {
     font-size: $fontSize;
-    line-height: $fontSize + 10px;
-    font-family: Scott, sans-serif;
+    line-height: $fontSize + 12px;
+    font-family: 'Roboto', sans-serif;
+    
 }
 
 @mixin title($fontSize: 42px) {
     @include text($fontSize);
     font-family: Scott, sans-serif;
+    -webkit-text-stroke: 1px var.$colortertiary;
+    text-stroke: 1px var.$colortertiary;
 }
 
 .text {
@@ -35,29 +44,30 @@
 }
 
 .title--primary {
-    @include title(42px);
+    @include title(32px);
     color: var.$colorprimary;
 }
 
 .title-secondary {
-    @include title(42px);
+    @include title(32px);
     color: var.$colorsecundary;
 }
 
 .title--nav {
-    @include title(32px);
+    @include title(28px);
     a{
         color: var.$colorprimary;
         text-decoration: none;
         letter-spacing: 2px;
+        -webkit-text-stroke: 2px var.$colortertiary;
+        text-stroke: 2px var.$colortertiary;
+        transition: all 1s ease;
+
+        &:hover {
+            color: var.$colorsecundary;
+        }
     }
-    :hover {
-        color: #000;
-        text-decoration: underline;
-        transition: color 0.5s ease;
-        text-decoration-thickness: 2px;
-        text-underline-offset: 12px;
-    }
+    
 }
 
 body {
