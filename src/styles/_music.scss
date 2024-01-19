@@ -1,0 +1,42 @@
+@use 'var';
+
+.music {
+    text-align: center;
+    background-color: var.$colorprimary;
+    
+    h1 {
+        padding: 6rem 0;
+    }
+
+    &__right {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+
+        &__image {
+            max-width: 50%;
+            img {
+                max-width: 460px;
+                border: 2px solid var.$colorsecundary;
+                border-radius: 10px;
+            }
+
+            h2 {
+                
+            }
+            p {
+            padding: 12px 6px;
+            word-wrap: break-word;
+            }  
+        }
+
+        &__text {
+            flex: 1;
+
+            ul {
+                list-style-type: decimal;
+                list-style-position: inside;
+            }
+        }
+    }
+}

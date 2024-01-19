@@ -2,6 +2,8 @@
 @use 'header';
 @use 'hero';
 @use 'about';
+@use 'music';
+@use 'wallp';
 
 @font-face {
     font-family: Scott;
@@ -48,7 +50,7 @@
     color: var.$colorprimary;
 }
 
-.title-secondary {
+.title--secondary {
     @include title(32px);
     color: var.$colorsecundary;
 }

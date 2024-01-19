@@ -1,0 +1,36 @@
+@use 'var';
+
+.wallp {
+    text-align: center;
+
+    h1 {
+        padding: 6rem 0;
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
+        list-style: none;
+        margin-bottom: 6rem;
+
+        &__item {
+            position: relative;
+            overflow: hidden;
+
+            img {
+                max-width: 100%;
+                border: 2px solid var.$colorprimary;
+                border-radius: 10px;
+                height: auto;
+                display: block;
+                transition: all 1s ease-out;
+            }
+
+            &:hover {
+                filter: grayscale(100%);
+                transform: scale(1.01);
+            }
+        }
+    }
+}
