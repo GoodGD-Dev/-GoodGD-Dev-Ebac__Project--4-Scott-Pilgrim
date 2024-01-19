@@ -1,0 +1,28 @@
+@use 'var';
+
+.header {
+    padding: 12px ;
+    background-color: var.$colorprimary;
+
+    &__navbar {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+        align-items: center;
+        
+        &__branding {
+            img {
+                max-width: 200px;
+            }
+        }
+        &__item {
+
+            &.title--nav {
+                text-transform: uppercase;
+                -webkit-text-stroke: 2px #000;
+                text-stroke: 2px #000;
+            }
+        }
+        
+    }
+}

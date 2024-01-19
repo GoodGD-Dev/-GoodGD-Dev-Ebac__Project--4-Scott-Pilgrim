@@ -1,0 +1,65 @@
+@use 'var';
+@use 'header';
+
+@font-face {
+    font-family: Scott;
+    src: url('../../assets/fonts/Dusty.ttf');
+}
+
+@font-face {
+    font-family: Scotts;
+    src: url('../../assets/fonts/SUPERFLY.TTF');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+@mixin text($fontSize: 16px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    font-family: Scott, sans-serif;
+}
+
+@mixin title($fontSize: 42px) {
+    @include text($fontSize);
+    font-family: Scott, sans-serif;
+}
+
+.text {
+    @include text;
+}
+
+.title--primary {
+    @include title(42px);
+    color: var.$colorprimary;
+}
+
+.title-secondary {
+    @include title(42px);
+    color: var.$colorsecundary;
+}
+
+.title--nav {
+    @include title(32px);
+    a{
+        color: var.$colorprimary;
+        text-decoration: none;
+        letter-spacing: 2px;
+    }
+    :hover {
+        color: #000;
+        text-decoration: underline;
+        transition: color 0.5s ease;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 12px;
+    }
+}
+
+body {
+    background-color: var.$colorsecundary;
+}
