@@ -34,3 +34,19 @@
         }
     }
 }
+
+@media only screen and (max-width: 768px) { 
+    .wallp {
+        padding: 10px;
+
+        h1 {
+            padding: 3rem 0;
+        }
+
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+    }
+}

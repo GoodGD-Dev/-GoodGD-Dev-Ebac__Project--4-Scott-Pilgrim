@@ -21,11 +21,8 @@
                 border-radius: 10px;
             }
 
-            h2 {
-                
-            }
             p {
-            padding: 12px 6px;
+            padding: 4rem 1rem;
             word-wrap: break-word;
             }  
         }
@@ -34,8 +31,42 @@
             flex: 1;
 
             ul {
+                margin-left: 12rem;
+                text-align: start;
                 list-style-type: decimal;
                 list-style-position: inside;
+                margin-bottom: 6rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .music {
+        h1 {
+            padding: 3rem 0;
+        }
+    
+        &__right {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            p {
+                width: 315px;
+                padding: 2rem 0;
+                }  
+            &__image {
+                img {
+                    max-width: 320px;
+                }
+                
+            }
+    
+            &__text {
+                ul {
+                    margin-left: 0rem;
+                    margin-bottom: 3rem;
+                }
             }
         }
     }

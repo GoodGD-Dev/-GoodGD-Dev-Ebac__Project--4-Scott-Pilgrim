@@ -1,8 +1,17 @@
 .hero {
     padding: 5.6vw;
-    min-height: 90vh;
+    min-height: 80vh;
     max-width: 100%;
     background-image: url(../../build/images/home.jpg);
     text-align: center;
     background-size: cover;
+}
+
+@media only screen and (max-width: 768px) { 
+    .hero {
+    margin-top: 70px;
+    min-height: 25.5vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    }
 }

@@ -5,13 +5,13 @@
     padding: 6rem 0;
 
     h1 {
-        margin-bottom: 10px;
+        margin-bottom: 0.8rem;
     }
 
     &__content-primary {
         display: flex;
         justify-content: space-between;
-        margin-bottom: 6rem;
+        margin-bottom: 4rem;
         
         img {
             max-width: 460px;
@@ -29,6 +29,39 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 45px;
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) { 
+    .about {
+        padding: 1rem 0;
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        &__content-primary {
+            display: block;
+            margin-bottom: 3rem;
+            padding: 20px;
+            
+            img {
+                max-width: 320px;
+            }  
+    
+            &__text {
+                max-width: 100%;
+            }
+        }
+        &__content-secondary {
+            &__text {
+                display: block;
+            }
         }
     }
 }

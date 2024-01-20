@@ -1,0 +1,19 @@
+@use 'var';
+
+.footer {
+    background-color: var.$colorprimary;
+    padding: 2rem 0;
+    text-align: center;
+    align-items: center;
+    font-weight: bolder;
+}
+
+@media only screen and (max-width: 768px) { 
+    .footer {
+        padding: 0.8rem 0;
+        p {
+            font-size: 0.8rem;
+        }
+        
+    }
+}

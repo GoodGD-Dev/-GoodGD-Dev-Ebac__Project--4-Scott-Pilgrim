@@ -4,6 +4,9 @@
 @use 'about';
 @use 'music';
 @use 'wallp';
+@use 'serie';
+@use 'footer';
+
 
 @font-face {
     font-family: Scott;
@@ -22,19 +25,19 @@
 }
 
 .container {
-    max-width: 1024px;
+    max-width: 1280px;
     width: 100%;
     margin: 0 auto;
 }
 
-@mixin text($fontSize: 16px) {
+@mixin text($fontSize: 1rem) {
     font-size: $fontSize;
-    line-height: $fontSize + 12px;
+    line-height: $fontSize + 0.8rem;
     font-family: 'Roboto', sans-serif;
     
 }
 
-@mixin title($fontSize: 42px) {
+@mixin title($fontSize: 2.6rem) {
     @include text($fontSize);
     font-family: Scott, sans-serif;
     -webkit-text-stroke: 1px var.$colortertiary;
@@ -46,17 +49,17 @@
 }
 
 .title--primary {
-    @include title(32px);
+    @include title(2rem);
     color: var.$colorprimary;
 }
 
 .title--secondary {
-    @include title(32px);
+    @include title(2rem);
     color: var.$colorsecundary;
 }
 
 .title--nav {
-    @include title(28px);
+    @include title(1.8rem);
     a{
         color: var.$colorprimary;
         text-decoration: none;

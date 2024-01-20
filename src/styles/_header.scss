@@ -1,8 +1,13 @@
 @use 'var';
 
 .header {
-    padding: 6px ;
+    padding: 0.5rem ;
     background-color: var.$colorprimary;
+    position: fixed;
+    z-index: 1030;
+    top: 0;
+    right: 0;
+    left: 0;
 
     &__navbar {
         display: flex;
@@ -12,7 +17,7 @@
         
         &__logo {
             img {
-                max-width: 100px;
+                max-width: 150px;
             }
         }
         &__item {
@@ -25,4 +30,154 @@
         }
         
     }
+}
+
+.navigation {
+    display: none;
+}
+
+@media only screen and (max-width: 768px) { 
+    .header {
+        padding: 0;
+
+        &__navbar {
+            display: none;
+        }
+    }
+    @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+
+:root {
+--clr: #262433;
+}
+
+.navigation {
+    max-width: 100vw;
+    background: #fff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center;
+
+    &__logo {
+        padding: 10px;
+        a img {
+            max-width: 75px;
+        }
+    }
+
+    ul {
+        display: flex;
+        width: 350px;
+
+        li {
+        position: relative;
+        list-style: none;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+
+        a {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            text-align: center;
+            font-weight: 500;
+
+            .icon {
+            position: relative;
+            display: block;
+            line-height: 75px;
+            font-size: 1.5em;
+            text-align: center;
+            transition: 0.5s;
+            color: #000;
+            opacity: 0.75;
+            }
+        }
+
+        &.active {
+            a {
+            .icon {
+                transform: translateY(-8px);
+                opacity: 1;
+                color: #D7230F;
+            }
+            }
+        }
+        }
+    }
+    }
+
+    .indicator {
+    position: absolute;
+    top: -10px;
+    width: 70px;
+    height: 70px;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+    border: 6px solid var(--clr);
+    background: var(--clr);
+    cursor: pointer;
+    transition: 0.5s;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: -25.75px;
+        width: 20px;
+        height: 20px;
+        border-top-right-radius: 20px;
+        box-shadow: 4px -6px 0 2px var(--clr);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        right: -25.75px;
+        width: 20px;
+        height: 20px;
+        border-top-left-radius: 20px;
+        box-shadow: -4px -6px 0 2px var(--clr);
+        z-index: -1;
+    }
+
+    ul li:nth-child(2).active ~ & {
+        transform: translateX(calc(70px * 1));
+    }
+
+    ul li:nth-child(3).active ~ & {
+        transform: translateX(calc(70px * 2));
+    }
+
+    ul li:nth-child(4).active ~ & {
+        transform: translateX(calc(70px * 3));
+    }
+
+    ul li:nth-child(5).active ~ & {
+        transform: translateX(calc(70px * 4));
+    }
+
+    span {
+        position: absolute;
+        bottom: 3px;
+        left: -1px;
+        width: 60px;
+        height: 60px;
+        border: 4px solid #D7230F;
+        background: #fff;
+        border-radius: 50%;
+        transform-origin: bottom;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        transform: scale(0.85);
+    }
+}
 }
